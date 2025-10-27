@@ -117,8 +117,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PageObjects\LoginPage.cs" />
+    <Compile Include="PageObjects\Locators.cs" />
     <Compile Include="RunTestPlan.cs" />
-    <Compile Include="PageObjects\Dashboard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SeleniumHelpers\SeleniumHelper.cs" />
     <Compile Include="Utilities\ConfigurationHelper.cs" />
@@ -143,6 +144,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Structure\GuiTests\Locators\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

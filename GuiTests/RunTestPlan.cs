@@ -16,7 +16,7 @@ namespace Structure.GuiTests
         public IWebDriver _driver;
         private StringBuilder _verificationErrors;
         public string _baseUrl;
-        private Dashboard _dashboard;        
+        private LoginPage _loginPage;        
 
         [SetUp]
         public void SetupTest()
@@ -24,7 +24,7 @@ namespace Structure.GuiTests
             _driver = new DriverFactory().Create();
             _baseUrl = ConfigurationHelper.Get<string>("TargetUrl");
             _verificationErrors = new StringBuilder();
-            _dashboard = new Dashboard(_driver);
+            _loginPage = new LoginPage(_driver);
             Console.WriteLine("Starting!!");
         }
 
@@ -44,14 +44,10 @@ namespace Structure.GuiTests
         }
 
         [Test]
-        public void Dashboard_Actions()
+        public void Login_Tests()
         {
-            _dashboard.Login(_baseUrl);
-            _dashboard.AddEmployee();
-            _dashboard.ValidateMonthlyNetPay();
-            _dashboard.EditEmployee();
-            _dashboard.DeleteEmployee();
-            _dashboard.Logout();
+            _loginPage.Login(_baseUrl);
+            
 
             Console.WriteLine("Test completed!!");
         }
