@@ -27,7 +27,7 @@ namespace Structure.GuiTests.SeleniumHelpers
                 DriverToUse.Edge => new EdgeDriver(
                     AppDomain.CurrentDomain.BaseDirectory,
                     new EdgeOptions(),
-                    TimeSpan.FromMinutes(5)),
+                    TimeSpan.FromSeconds(3000)),
 
                 DriverToUse.Chrome => new ChromeDriver(
                     AppDomain.CurrentDomain.BaseDirectory,
@@ -35,7 +35,7 @@ namespace Structure.GuiTests.SeleniumHelpers
                     {
                         PageLoadStrategy = PageLoadStrategy.Normal
                     },
-                    TimeSpan.FromMinutes(5)),
+                    TimeSpan.FromSeconds(30)),
                 
 
                 _ => throw new ArgumentOutOfRangeException()
